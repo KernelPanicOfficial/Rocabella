@@ -98,12 +98,7 @@ func StartRocabella(cmd *cobra.Command, args []string) error {
 	}
 
 	// Obtain version flag
-	versionFlag, err := cmd.Flags().GetBool("version")
-
-	// If error exists
-	if err != nil {
-		return err
-	}
+	versionFlag, _ := cmd.Flags().GetBool("version")
 
 	// Call function names ShowVersion
 	ShowVersion(versionFlag)
