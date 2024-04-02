@@ -13,7 +13,7 @@ Sniffer files generator.
 
 ## Description
 
-Rocabella is an open-source Go tool that generates sniffing files.
+Rocabella is an open-source tool that generates sniffing files.
 
 It supports a variety of sniffing file formats, including:
 
