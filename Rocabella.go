@@ -1,10 +1,13 @@
 package main
 
 import (
-	"fmt"
+	"Rocabella/Packages/Arguments"
 )
 
 // main function
 func main() {
-	fmt.Println("Hello")
+	error := Arguments.RocabellaCli.Execute()
+	if error != nil {
+		return
+	}
 }
