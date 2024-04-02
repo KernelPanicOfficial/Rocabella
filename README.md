@@ -86,3 +86,5 @@ go build Rocabella
 - [Library-ms by Filesec](https://filesec.io/library-ms)
 - [LNK by Filesec](https://filesec.io/lnk)
 - [URL by Filesec](https://filesec.io/url)
+- [Search Connector Description Schema Microsoft](https://learn.microsoft.com/en-us/windows/win32/search/search-sconn-desc-schema-entry)
+- [Library Description Schema Microsoft](https://learn.microsoft.com/en-us/windows/win32/shell/library-schema-entry)
