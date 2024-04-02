@@ -25,6 +25,8 @@ The author and contributors of this project are not liable for any illegal use o
   - [Disclaimer](#disclaimer)
   - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
+  - [Usage](#usage)
+  - [References](#references)
  
 ## Installation
 
@@ -53,3 +55,11 @@ go mod download
 ```
 go build Rocabella
 ```
+
+## Usage
+
+:information_source: Please refer to the [Rocabella Wiki](https://github.com/nickvourd/Rocabella/wiki) for detailed usage instructions and examples of commands.
+
+## References
+
+[Farming for Red Teams: Harvesting NetNTLM by MDSec](https://www.mdsec.co.uk/2021/02/farming-for-red-teams-harvesting-netntlm/)
