@@ -60,22 +60,22 @@ func init() {
 	// For sc command
 	scArgument.Flags().StringP("target", "t", "", "Set target host")
 	scArgument.Flags().StringP("icon", "i", "", "Set icon display")
-	scArgument.Flags().StringP("output", "o", "", "set output file")
+	scArgument.Flags().StringP("output", "o", "", "Set output file")
 
 	// For lib command
 	libArgument.Flags().StringP("target", "t", "", "Set target host")
 	libArgument.Flags().StringP("icon", "i", "", "Set icon display")
-	libArgument.Flags().StringP("output", "o", "", "set output file")
+	libArgument.Flags().StringP("output", "o", "", "Set output file")
 
 	// For url command
 	urlArgument.Flags().StringP("target", "t", "", "Set target host")
 	urlArgument.Flags().StringP("icon", "i", "", "Set icon display")
-	urlArgument.Flags().StringP("output", "o", "", "set output file")
+	urlArgument.Flags().StringP("output", "o", "", "Set output file")
 
 	// For lnk command
 	lnkArgument.Flags().StringP("target", "t", "", "Set target host")
 	lnkArgument.Flags().StringP("icon", "i", "", "Set icon display")
-	lnkArgument.Flags().StringP("output", "o", "", "set output file")
+	lnkArgument.Flags().StringP("output", "o", "", "Set output file")
 }
 
 // StartRocabella function
