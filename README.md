@@ -78,6 +78,38 @@ go build Rocabella
 
 :information_source: Please refer to the [Rocabella Wiki](https://github.com/nickvourd/Rocabella/wiki) for detailed usage instructions and examples of commands.
 
+```
+8888888b.                            888               888 888
+888   Y88b                           888               888 888
+888    888                           888               888 888
+888   d88P .d88b.   .d8888b  8888b.  88888b.   .d88b.  888 888  8888b.
+8888888P" d88""88b d88P"        "88b 888 "88b d8P  Y8b 888 888     "88b
+888 T88b  888  888 888      .d888888 888  888 88888888 888 888 .d888888
+888  T88b Y88..88P Y88b.    888  888 888 d88P Y8b.     888 888 888  888
+888   T88b "Y88P"   "Y8888P "Y888888 88888P"   "Y8888  888 888 "Y888888
+
+
+Rocabella v1.0 - Sniffing files generator.
+Rocabella is an open source tool licensed under MIT.
+Written with <3 by @nickvourd.
+Please visit https://github/nickvourd/Rocabella for more...
+
+Usage:
+  Rocabella [flags]
+  Rocabella [command]
+
+Available Commands:
+  help        Help about any command
+  lib         library-ms file
+  lnk         lnk shortcut file
+  sc          searchConnector-ms file
+  url         url shortcut file
+
+Flags:
+  -h, --help      help for Rocabella
+  -v, --version   Show Rocabella current version
+```
+
 ## References
 
 - [Farming for Red Teams: Harvesting NetNTLM by MDSec](https://www.mdsec.co.uk/2021/02/farming-for-red-teams-harvesting-netntlm/)
