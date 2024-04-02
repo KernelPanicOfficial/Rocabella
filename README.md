@@ -13,7 +13,7 @@ Sniffing files generator.
 
 ## Description
 
-Rocabella is an open-source tool that generates sniffing files. This tool is the sibling of the [EvilLNK](#) tool.
+Rocabella is an open-source tool that generates sniffing files. This tool is the sibling of the [EvilLNK](https://github.com/georgesotiriadis/EvilLNK) tool.
 
 It supports a variety of sniffing file formats, including:
 
