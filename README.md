@@ -3,7 +3,8 @@
 Sniffer files generator.
 
 <p align="center">
-  <img width="350" height="350" src="/Pictures/Rocabella-Logo.png">
+  <img width="350" height="350" src="/Pictures/Rocabella-Logo.png"><br /><br />
+  <img alt="Static Badge" src="https://img.shields.io/badge/License-MIT-green?link=https%3A%2F%2Fgithub.com%2Fnickvourd%2FRocabella%2Fblob%2Fmain%2FLICENSE">
 </p>
 
 ## Description
