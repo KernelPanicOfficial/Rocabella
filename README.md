@@ -37,10 +37,15 @@ The author and contributors of this project are not liable for any illegal use o
   - [Description](#description)
   - [Disclaimer](#disclaimer)
   - [Table of Contents](#table-of-contents)
+  - [Acknowledgement](#acknowledgement)
   - [Installation](#installation)
   - [Usage](#usage)
   - [References](#references)
  
+## Acknowledgement
+
+Special thanks to my brothers [@S1ckB0y1337](https://twitter.com/S1ckB0y1337) and [@MikeAngelowtt](https://twitter.com/MikeAngelowtt), who provided invaluable assistance during the beta testing phase of the tool.
+
 ## Installation
 
 You can use the [precompiled binaries](https://github.com/nickvourd/Rocabella/releases), or you can manually install Rocabella by following the next steps:
