@@ -2,9 +2,11 @@ package Arguments
 
 import (
 	"Rocabella/Packages/Colors"
+	"Rocabella/Packages/Templates"
 	"fmt"
 	"log"
 	"os"
+	"strings"
 
 	"github.com/spf13/cobra"
 )
@@ -34,6 +36,9 @@ Written with <3 by %s.
 Please visit %s for more...
 
 `
+	microsoftOfficeIcons  = []string{"access", "excel", "lync", "office", "onedrive", "onenote", "outlook", "powerpoint", "project", "publisher", "visio", "word"}
+	microsoftWindowsIcons = []string{"bluetooth", "calc", "chm", "defender", "defrag", "edge", "explorer", "dir", "directory", "folder", "help", "hlp", "internet-explorer", "ie", "keyboard", "magnify", "mail", "media-player", "mobile-sync", "mspaint", "paint", "notepad", "onedrive2", "package", "pdf", "perfmon", "teams", "uac-shield", "uac", "werfault", "windows-store", "xbox"}
+	thirdPartyIcons       = []string{"adobe-reader", "chrome", "citrix", "cyberark-epm", "firefox", "global-protect", "java", "java-update", "python", "snow-agent", "synaptics-touchpad"}
 
 	RocabellaCli = &cobra.Command{
 		Use:          "Rocabella",
@@ -51,6 +56,7 @@ func init() {
 	// Add commands to the Rocabella CLI.
 	RocabellaCli.Flags().SortFlags = true
 	RocabellaCli.Flags().BoolP("version", "v", false, "Show Rocabella current version")
+	RocabellaCli.Flags().BoolP("list", "l", false, "Show the list of available icons")
 	RocabellaCli.AddCommand(scArgument)
 	RocabellaCli.AddCommand(libArgument)
 	RocabellaCli.AddCommand(urlArgument)
@@ -99,9 +105,13 @@ func StartRocabella(cmd *cobra.Command, args []string) error {
 
 	// Obtain version flag
 	versionFlag, _ := cmd.Flags().GetBool("version")
+	iconListFlag, _ := cmd.Flags().GetBool("list")
 
-	// Call function names ShowVersion
+	// Call function named ShowVersion
 	ShowVersion(versionFlag)
+
+	// Call function named ShowIconList
+	ShowIconList(iconListFlag, microsoftOfficeIcons, microsoftWindowsIcons, thirdPartyIcons)
 
 	return nil
 }
@@ -122,4 +132,38 @@ func ShowVersion(versionFlag bool) {
 		fmt.Printf("[+] Current version: " + Colors.BoldRed(__version__) + "\n\n[+] Version name: " + Colors.BoldRed(__version_name__) + "\n\n")
 		os.Exit(0)
 	}
+}
+
+// ValidateIcon function
+func ValidateIcon(argValue string, icons []Templates.IconTemplates) string {
+	for _, icon := range icons {
+		if strings.EqualFold(strings.ToLower(argValue), strings.ToLower(icon.Name)) {
+			iconPath := `"` + icon.Path + `"`
+			switch strings.ToLower(argValue) {
+			case "office":
+				iconPath += "," + "56"
+			case "explorer", "dir", "directory", "folder":
+				iconPath += "," + "0"
+			case "pdf":
+				iconPath += "," + "13"
+			default:
+				// Do nothing, iconPath remains unchanged
+			}
+			return iconPath
+		}
+	}
+	return ""
+}
+
+// ShowIconList function
+func ShowIconList(iconListFlag bool, iconList1 []string, iconList2 []string, iconList3 []string) {
+	// if iconListFlag is enabled
+	if iconListFlag {
+		microsoftOfficeIcons := strings.Join(iconList1, ", ")
+		microsoftWindowsIcons := strings.Join(iconList2, ", ")
+		thirdPartyIcons := strings.Join(iconList3, ", ")
+		fmt.Printf("[+] Available icons:\n\n"+Colors.BoldYellow("===Microsoft Office icons===")+"\n\n%s\n\n"+Colors.BoldYellow("===Microsoft Windows icons===")+"\n\n%s\n\n"+Colors.BoldYellow("===Third-party icons (if they exist on the system)===")+"\n\n%s\n\n", Colors.BoldCyan(microsoftOfficeIcons), Colors.BoldCyan(microsoftWindowsIcons), Colors.BoldCyan(thirdPartyIcons))
+		os.Exit(0)
+	}
+
 }
