@@ -13,7 +13,18 @@ Sniffer files generator.
 
 ## Description
 
+Rocabella is an open-source Go tool that generates sniffing files.
+
+It supports a variety of sniffing file formats, including:
+
+- searchConnector-ms
+- library-ms
+- LNK shortcuts
+- URL shortcuts
+
 Rocabella is written in Golang, a cross-platform language, enabling its use on both Windows and Linux systems.
+
+> If you find any bugs, don’t hesitate to [report them](https://github.com/nickvourd/Rocabella/issues). Your feedback is valuable in improving the quality of this project!
 
 ## Disclaimer
 
@@ -66,5 +77,5 @@ go build Rocabella
 - [The Latest in Software Functionality Abuse: URL Internet Shortcut Files Abused to Deliver Malware by Cofense](https://cofense.com/blog/latest-software-functionality-abuse-url-internet-shortcut-files-abused-deliver-malware/)
 - [SearchConnector-ms by Filesec](https://filesec.io/searchConnector-ms)
 - [Library-ms by Filesec](https://filesec.io/library-ms)
-- [Lnk by Filesec](https://filesec.io/lnk)
-- [Url by Filesec](https://filesec.io/url)
+- [LNK by Filesec](https://filesec.io/lnk)
+- [URL by Filesec](https://filesec.io/url)
