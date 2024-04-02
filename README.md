@@ -62,4 +62,9 @@ go build Rocabella
 
 ## References
 
-[Farming for Red Teams: Harvesting NetNTLM by MDSec](https://www.mdsec.co.uk/2021/02/farming-for-red-teams-harvesting-netntlm/)
+- [Farming for Red Teams: Harvesting NetNTLM by MDSec](https://www.mdsec.co.uk/2021/02/farming-for-red-teams-harvesting-netntlm/)
+- [The Latest in Software Functionality Abuse: URL Internet Shortcut Files Abused to Deliver Malware by Cofense](https://cofense.com/blog/latest-software-functionality-abuse-url-internet-shortcut-files-abused-deliver-malware/)
+- [SearchConnector-ms by Filesec](https://filesec.io/searchConnector-ms)
+- [Library-ms by Filesec](https://filesec.io/library-ms)
+- [Lnk by Filesec](https://filesec.io/lnk)
+- [Url by Filesec](https://filesec.io/url)
