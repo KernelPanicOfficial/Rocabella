@@ -70,6 +70,7 @@ func StartRocabella(cmd *cobra.Command, args []string) error {
 		// Exit the program.
 		os.Exit(0)
 	}
+
 	return nil
 }
 
