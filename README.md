@@ -13,6 +13,43 @@ Sniffer files generator.
 
 ## Description
 
+Rocabella is written in Golang, a cross-platform language, enabling its use on both Windows and Linux systems.
+
 ## Disclaimer
 
 The author and contributors of this project are not liable for any illegal use of the tool. It is intended for educational purposes only. Users are responsible for ensuring lawful usage.
+
+## Table of Contents
+- [Rocabella](#rocabella)
+  - [Description](#description)
+  - [Disclaimer](#disclaimer)
+  - [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
+ 
+## Installation
+
+You can use the [precompiled binaries](https://github.com/nickvourd/Rocabella/releases), or you can manually install Rocabella by following the next steps:
+
+1) Clone the repository by executing the following command:
+
+```
+git clone https://github.com/nickvourd/Rocabella.git
+```
+
+2) Once the repository is cloned, navigate into the Rocabella directory:
+
+```
+cd Rocabella
+```
+
+3) Install the third-party dependencies:
+
+```
+go mod download
+```
+
+4) Build Rocabella with the following command:
+
+```
+go build Rocabella
+```
