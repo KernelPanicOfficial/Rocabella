@@ -84,38 +84,6 @@ func init() {
 	lnkArgument.Flags().StringP("output", "o", "", "Set output file")
 }
 
-// StartRocabella function
-func StartRocabella(cmd *cobra.Command, args []string) error {
-	logger := log.New(os.Stderr, "[!] ", 0)
-
-	// Call function named ShowAscii
-	ShowAscii()
-
-	// Check if additional arguments were provided.
-	if len(os.Args) == 1 {
-		// Display help message.
-		err := cmd.Help()
-
-		// If error exists
-		if err != nil {
-			logger.Fatal(" Error:", err)
-			return err
-		}
-	}
-
-	// Obtain flag
-	versionFlag, _ := cmd.Flags().GetBool("version")
-	iconListFlag, _ := cmd.Flags().GetBool("list")
-
-	// Call function named ShowVersion
-	ShowVersion(versionFlag)
-
-	// Call function named ShowIconList
-	ShowIconList(iconListFlag, microsoftOfficeIcons, microsoftWindowsIcons, thirdPartyIcons)
-
-	return nil
-}
-
 // ShowAscii function
 func ShowAscii() {
 	// Initialize RandomColor
@@ -166,4 +134,36 @@ func ShowIconList(iconListFlag bool, iconList1 []string, iconList2 []string, ico
 		os.Exit(0)
 	}
 
+}
+
+// StartRocabella function
+func StartRocabella(cmd *cobra.Command, args []string) error {
+	logger := log.New(os.Stderr, "[!] ", 0)
+
+	// Call function named ShowAscii
+	ShowAscii()
+
+	// Check if additional arguments were provided.
+	if len(os.Args) == 1 {
+		// Display help message.
+		err := cmd.Help()
+
+		// If error exists
+		if err != nil {
+			logger.Fatal(" Error:", err)
+			return err
+		}
+	}
+
+	// Obtain flag
+	versionFlag, _ := cmd.Flags().GetBool("version")
+	iconListFlag, _ := cmd.Flags().GetBool("list")
+
+	// Call function named ShowVersion
+	ShowVersion(versionFlag)
+
+	// Call function named ShowIconList
+	ShowIconList(iconListFlag, microsoftOfficeIcons, microsoftWindowsIcons, thirdPartyIcons)
+
+	return nil
 }
