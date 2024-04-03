@@ -103,7 +103,7 @@ func StartRocabella(cmd *cobra.Command, args []string) error {
 		}
 	}
 
-	// Obtain flags
+	// Obtain flag
 	versionFlag, _ := cmd.Flags().GetBool("version")
 	iconListFlag, _ := cmd.Flags().GetBool("list")
 
