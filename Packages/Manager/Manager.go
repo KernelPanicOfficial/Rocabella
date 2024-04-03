@@ -2,6 +2,8 @@ package Manager
 
 import (
 	"Rocabella/Packages/Colors"
+	"Rocabella/Packages/Output"
+	"Rocabella/Packages/Templates"
 	"Rocabella/Packages/Utils"
 	"fmt"
 	"time"
@@ -60,5 +62,30 @@ func CreateLNK(target string, output string, description string) {
 	// Calculate the duration
 	LNKCreationDuration := LNKCreationEndTime.Sub(LNKCreationStartTime)
 
-	fmt.Printf("[+] Shortcut successfully created!\n\n[+] Saved to %s\n\n[+] Completed in %s\n\n", Colors.BoldRed(outputAbsolute), LNKCreationDuration)
+	fmt.Printf("[+] LNK shortcut successfully created!\n\n[+] Saved to %s\n\n[+] Completed in %s\n\n", Colors.BoldRed(outputAbsolute), LNKCreationDuration)
+}
+
+// CreateURL function
+func CreateURL(target string, output string, url string, workingDir string) {
+	fmt.Printf("[+] Preparing your malicious URL file...\n\n")
+
+	// Record the start time
+	URLCreationStartTime := time.Now()
+
+	// Get the URL file template with provided values
+	urlFileContent := Templates.GetURLFileTemplate(url, workingDir, target)
+
+	// Record the end time
+	URLCreationEndTime := time.Now()
+
+	// Call function named GetAbsolutePath
+	outputAbsolute := Utils.GetAbsolutePath(output)
+
+	// Calculate the duration
+	URLCreationDuration := URLCreationEndTime.Sub(URLCreationStartTime)
+
+	// Call function named WriteToFile
+	Output.WriteToFile(output, urlFileContent)
+
+	fmt.Printf("[+] URL shortcut successfully created!\n\n[+] Saved to %s\n\n[+] Completed in %s\n\n", Colors.BoldRed(outputAbsolute), URLCreationDuration)
 }

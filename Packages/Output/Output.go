@@ -2,6 +2,8 @@ package Output
 
 import (
 	"fmt"
+	"log"
+	"os"
 	"path/filepath"
 )
 
@@ -47,4 +49,21 @@ func AddExtension(extension string, output string) string {
 	fmt.Printf("[!] Added the '%s' extension to %s file\n\n", extension, output)
 
 	return addExtension
+}
+
+// WriteToFile function
+func WriteToFile(file string, data string) {
+	logger := log.New(os.Stderr, "[!] ", 0)
+	f, err := os.Create(file)
+	if err != nil {
+		logger.Fatal("Error:", err)
+		return
+	}
+	defer f.Close()
+
+	_, err = f.WriteString(data)
+	if err != nil {
+		logger.Fatal("Error:", err)
+		return
+	}
 }

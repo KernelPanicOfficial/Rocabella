@@ -1,6 +1,8 @@
 package Arguments
 
 import (
+	"Rocabella/Packages/Manager"
+	"Rocabella/Packages/Output"
 	"log"
 	"os"
 
@@ -18,6 +20,9 @@ var urlArgument = &cobra.Command{
 	RunE: func(cmd *cobra.Command, args []string) error {
 		logger := log.New(os.Stderr, "[!] ", 0)
 
+		// Call function named ShowAscii
+		ShowAscii()
+
 		// Check if additional arguments were provided.
 		if len(os.Args) <= 2 {
 			// Show help message.
@@ -30,6 +35,28 @@ var urlArgument = &cobra.Command{
 			// Exit the program.
 			os.Exit(0)
 		}
+
+		// Get the value of the any flag
+		target, _ := cmd.Flags().GetString("target")
+		output, _ := cmd.Flags().GetString("output")
+		url, _ := cmd.Flags().GetString("url-header")
+		workingDir, _ := cmd.Flags().GetString("working-dir")
+
+		// If target is empty
+		if target == "" {
+			logger.Fatal("The '-t' or '--target' flag is required for the command to proceed.")
+		}
+
+		// If output is empty
+		if output == "" {
+			logger.Fatal("The '-o' or '--output' flag is required for the command to proceed.")
+		}
+
+		// Call function named OutputValidate
+		output = Output.OutputValidate(output, 4)
+
+		// Call function named CreateURL
+		Manager.CreateURL(target, output, url, workingDir)
 
 		return nil
 	},
