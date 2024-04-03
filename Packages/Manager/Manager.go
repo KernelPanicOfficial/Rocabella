@@ -1,8 +1,11 @@
 package Manager
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // CreateLNK function
-func CreateLNK(target string, icon string, output string) {
-	fmt.Println(target, icon, output)
+func CreateLNK(target string, icon string, output string, iconPath string) {
+
+	fmt.Println(target, icon, output, iconPath)
 }

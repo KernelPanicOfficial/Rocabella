@@ -80,7 +80,7 @@ func init() {
 
 	// For lnk command
 	lnkArgument.Flags().StringP("target", "t", "", "Set target host")
-	lnkArgument.Flags().StringP("icon", "i", "", "Set icon display")
+	lnkArgument.Flags().StringP("icon", "i", "pdf", "Set icon display")
 	lnkArgument.Flags().StringP("output", "o", "", "Set output file")
 }
 
@@ -102,8 +102,8 @@ func ShowVersion(versionFlag bool) {
 	}
 }
 
-// ValidateIcon function
-func ValidateIcon(argValue string, icons []Templates.IconTemplates) string {
+// GetIconPath function
+func GetIconPath(argValue string, icons []Templates.IconTemplates) string {
 	for _, icon := range icons {
 		if strings.EqualFold(strings.ToLower(argValue), strings.ToLower(icon.Name)) {
 			iconPath := `"` + icon.Path + `"`
@@ -165,4 +165,19 @@ func StartRocabella(cmd *cobra.Command, args []string) error {
 	ShowIconList(iconListFlag, microsoftOfficeIcons, microsoftWindowsIcons, thirdPartyIcons)
 
 	return nil
+}
+
+// ValidateArgument function
+func ValidateArgument(argName string, argValue string, validValues []string) string {
+	for _, valid := range validValues {
+		// Convert all to lowercase to avoid problems with case sensitivity
+		if strings.EqualFold(strings.ToLower(argValue), strings.ToLower(valid)) {
+			valid = strings.ToLower(valid)
+			return valid
+		}
+	}
+
+	fmt.Printf("[!] Invalid value '%s' for argument '%s'. Valid values are: %v\n\n", argValue, argName, validValues)
+	os.Exit(1)
+	return ""
 }
