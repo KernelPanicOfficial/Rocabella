@@ -133,7 +133,6 @@ func ShowIconList(iconListFlag bool, iconList1 []string, iconList2 []string, ico
 		fmt.Printf("[+] Available icons:\n\n"+Colors.BoldYellow("===Microsoft Office icons===")+"\n\n%s\n\n"+Colors.BoldYellow("===Microsoft Windows icons===")+"\n\n%s\n\n"+Colors.BoldYellow("===Third-party icons (if they exist on the system)===")+"\n\n%s\n\n", Colors.BoldCyan(microsoftOfficeIcons), Colors.BoldCyan(microsoftWindowsIcons), Colors.BoldCyan(thirdPartyIcons))
 		os.Exit(0)
 	}
-
 }
 
 // StartRocabella function
