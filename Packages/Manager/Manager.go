@@ -3,6 +3,7 @@ package Manager
 import (
 	"Rocabella/Packages/Utils"
 	"fmt"
+	"time"
 
 	"github.com/go-ole/go-ole"
 	"github.com/go-ole/go-ole/oleutil"
@@ -10,6 +11,11 @@ import (
 
 // CreateLNK function
 func CreateLNK(target string, output string, description string) {
+	fmt.Printf("[+] Preparing your malicious LNK file...\n\n")
+
+	// Record the start time
+	LNKCreationStartTime := time.Now()
+
 	ole.CoInitializeEx(0, ole.COINIT_APARTMENTTHREADED|ole.COINIT_SPEED_OVER_MEMORY)
 	defer ole.CoUninitialize()
 
@@ -44,8 +50,14 @@ func CreateLNK(target string, output string, description string) {
 	// Save the shortcut
 	oleutil.CallMethod(shortcut.ToIDispatch(), "Save")
 
+	// Record the end time
+	LNKCreationEndTime := time.Now()
+
 	// Call function named GetAbsolutePath
 	outputAbsolute := Utils.GetAbsolutePath(output)
 
-	fmt.Printf("[+] Shortcut successfully created: %s\n\n", outputAbsolute)
+	// Calculate the duration
+	LNKCreationDuration := LNKCreationEndTime.Sub(LNKCreationStartTime)
+
+	fmt.Printf("[+] Shortcut successfully created!\n\n[+] Saved to %s\n\n[+] Completed in %s\n\n", outputAbsolute, LNKCreationDuration)
 }
