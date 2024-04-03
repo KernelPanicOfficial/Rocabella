@@ -52,7 +52,7 @@ var lnkArgument = &cobra.Command{
 		}
 
 		// Call function named OutputValidate
-		Output.OutputValidate(output, 1)
+		output = Output.OutputValidate(output, 1)
 
 		// Call function named CreateLNK
 		Manager.CreateLNK(target, output, description)

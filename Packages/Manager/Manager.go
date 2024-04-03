@@ -1,6 +1,7 @@
 package Manager
 
 import (
+	"Rocabella/Packages/Colors"
 	"Rocabella/Packages/Utils"
 	"fmt"
 	"time"
@@ -59,5 +60,5 @@ func CreateLNK(target string, output string, description string) {
 	// Calculate the duration
 	LNKCreationDuration := LNKCreationEndTime.Sub(LNKCreationStartTime)
 
-	fmt.Printf("[+] Shortcut successfully created!\n\n[+] Saved to %s\n\n[+] Completed in %s\n\n", outputAbsolute, LNKCreationDuration)
+	fmt.Printf("[+] Shortcut successfully created!\n\n[+] Saved to %s\n\n[+] Completed in %s\n\n", Colors.BoldRed(outputAbsolute), LNKCreationDuration)
 }

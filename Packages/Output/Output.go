@@ -1,34 +1,50 @@
 package Output
 
 import (
-	"log"
-	"os"
+	"fmt"
 	"path/filepath"
 )
 
 // OutputValidate function
-func OutputValidate(output string, statement int) {
-	logger := log.New(os.Stderr, "[!] ", 0)
+func OutputValidate(output string, statement int) string {
 	extension := filepath.Ext(output)
 
 	switch statement {
 	case 1:
 		if extension != ".lnk" {
-			logger.Fatal("The output file must have a '.lnk' extension.")
+			//Call function named AddExtension
+			output = AddExtension(".lnk", output)
 		}
 	case 2:
 		if extension != ".searchConnector-ms" {
-			logger.Fatal("The output file must have a '.searchConnector-ms' extension.")
+			// Call function named AddExtension
+			output = AddExtension(".searchConnector-ms", output)
 		}
 	case 3:
 		if extension != ".library-ms" {
-			logger.Fatal("The output file must have a '.library-ms' extension.")
+			// Call function named AddExtension
+			output = AddExtension(".library-ms", output)
 		}
 	case 4:
 		if extension != ".url" {
-			logger.Fatal("The output file must have a '.url' extension.")
+			// Call function named AddExtension
+			output = AddExtension(".url", output)
 		}
 	default:
-		logger.Fatal("Invalid statement.")
+		// Do nothing
 	}
+
+	return output
+}
+
+// AddExtension function
+func AddExtension(extension string, output string) string {
+	// Decalre varaibles
+	var addExtension string = output
+
+	// Add extension to output
+	addExtension = output + extension
+	fmt.Printf("[!] Added the '%s' extension to %s file\n\n", extension, output)
+
+	return addExtension
 }
