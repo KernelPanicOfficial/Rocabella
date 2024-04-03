@@ -2,7 +2,9 @@ package Arguments
 
 import (
 	"Rocabella/Packages/Manager"
+	"Rocabella/Packages/Output"
 	"Rocabella/Packages/Templates"
+	"fmt"
 	"log"
 	"os"
 
@@ -37,6 +39,7 @@ var lnkArgument = &cobra.Command{
 		target, _ := cmd.Flags().GetString("target")
 		icon, _ := cmd.Flags().GetString("icon")
 		output, _ := cmd.Flags().GetString("output")
+		description, _ := cmd.Flags().GetString("description")
 
 		// If target is empty
 		if target == "" {
@@ -47,6 +50,9 @@ var lnkArgument = &cobra.Command{
 		if output == "" {
 			logger.Fatal("The '-o' or '--output' flag is required for the command to proceed.")
 		}
+
+		// Call function named OutputValidate
+		Output.OutputValidate(output, 1)
 
 		// Joining arrays into a single slice
 		allIcons := append(append(microsoftOfficeIcons, microsoftWindowsIcons...), thirdPartyIcons...)
@@ -60,8 +66,9 @@ var lnkArgument = &cobra.Command{
 		// Call function named GetIconPath
 		iconPath := GetIconPath(icon, iconTamplates)
 
+		fmt.Println(iconPath)
 		// Call function named CreateLNK
-		Manager.CreateLNK(target, icon, output, iconPath)
+		Manager.CreateLNK(target, icon, output, iconPath, description)
 
 		return nil
 	},

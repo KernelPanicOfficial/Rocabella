@@ -82,6 +82,7 @@ func init() {
 	lnkArgument.Flags().StringP("target", "t", "", "Set target host")
 	lnkArgument.Flags().StringP("icon", "i", "pdf", "Set icon display")
 	lnkArgument.Flags().StringP("output", "o", "", "Set output file")
+	lnkArgument.Flags().StringP("description", "d", "Malicious LNK", "Set lnk description")
 }
 
 // ShowAscii function
