@@ -2,11 +2,9 @@ package Arguments
 
 import (
 	"Rocabella/Packages/Colors"
-	"Rocabella/Packages/Templates"
 	"fmt"
 	"log"
 	"os"
-	"strings"
 
 	"github.com/spf13/cobra"
 )
@@ -36,10 +34,6 @@ Written with <3 by %s.
 Please visit %s for more...
 
 `
-	microsoftOfficeIcons  = []string{"access", "excel", "lync", "office", "onedrive", "onenote", "outlook", "powerpoint", "project", "publisher", "visio", "word"}
-	microsoftWindowsIcons = []string{"bluetooth", "calc", "chm", "defender", "defrag", "edge", "explorer", "dir", "directory", "folder", "help", "hlp", "internet-explorer", "ie", "keyboard", "magnify", "mail", "media-player", "mobile-sync", "mspaint", "paint", "notepad", "onedrive2", "package", "pdf", "perfmon", "teams", "uac-shield", "uac", "werfault", "windows-store", "xbox"}
-	thirdPartyIcons       = []string{"adobe-reader", "chrome", "citrix", "cyberark-epm", "firefox", "global-protect", "java", "java-update", "python", "snow-agent", "synaptics-touchpad"}
-
 	RocabellaCli = &cobra.Command{
 		Use:          "Rocabella",
 		SilenceUsage: true,
@@ -56,7 +50,6 @@ func init() {
 	// Add commands to the Rocabella CLI.
 	RocabellaCli.Flags().SortFlags = true
 	RocabellaCli.Flags().BoolP("version", "v", false, "Show Rocabella current version")
-	RocabellaCli.Flags().BoolP("list", "l", false, "Show the list of available icons")
 	RocabellaCli.AddCommand(scArgument)
 	RocabellaCli.AddCommand(libArgument)
 	RocabellaCli.AddCommand(urlArgument)
@@ -80,9 +73,9 @@ func init() {
 
 	// For lnk command
 	lnkArgument.Flags().StringP("target", "t", "", "Set target host")
-	lnkArgument.Flags().StringP("icon", "i", "pdf", "Set icon display")
 	lnkArgument.Flags().StringP("output", "o", "", "Set output file")
 	lnkArgument.Flags().StringP("description", "d", "Malicious LNK", "Set lnk description")
+	lnkArgument.Flags().StringP("workingdir", "2", "", "Set lnk working directory")
 }
 
 // ShowAscii function
@@ -99,39 +92,6 @@ func ShowVersion(versionFlag bool) {
 	if versionFlag {
 		// if version flag exists
 		fmt.Printf("[+] Current version: " + Colors.BoldRed(__version__) + "\n\n[+] Version name: " + Colors.BoldRed(__version_name__) + "\n\n")
-		os.Exit(0)
-	}
-}
-
-// GetIconPath function
-func GetIconPath(argValue string, icons []Templates.IconTemplates) string {
-	for _, icon := range icons {
-		if strings.EqualFold(strings.ToLower(argValue), strings.ToLower(icon.Name)) {
-			iconPath := `"` + icon.Path + `"`
-			switch strings.ToLower(argValue) {
-			case "office":
-				iconPath += "," + "56"
-			case "explorer", "dir", "directory", "folder":
-				iconPath += "," + "0"
-			case "pdf":
-				iconPath += "," + "13"
-			default:
-				// Do nothing, iconPath remains unchanged
-			}
-			return iconPath
-		}
-	}
-	return ""
-}
-
-// ShowIconList function
-func ShowIconList(iconListFlag bool, iconList1 []string, iconList2 []string, iconList3 []string) {
-	// if iconListFlag is enabled
-	if iconListFlag {
-		microsoftOfficeIcons := strings.Join(iconList1, ", ")
-		microsoftWindowsIcons := strings.Join(iconList2, ", ")
-		thirdPartyIcons := strings.Join(iconList3, ", ")
-		fmt.Printf("[+] Available icons:\n\n"+Colors.BoldYellow("===Microsoft Office icons===")+"\n\n%s\n\n"+Colors.BoldYellow("===Microsoft Windows icons===")+"\n\n%s\n\n"+Colors.BoldYellow("===Third-party icons (if they exist on the system)===")+"\n\n%s\n\n", Colors.BoldCyan(microsoftOfficeIcons), Colors.BoldCyan(microsoftWindowsIcons), Colors.BoldCyan(thirdPartyIcons))
 		os.Exit(0)
 	}
 }
@@ -157,28 +117,9 @@ func StartRocabella(cmd *cobra.Command, args []string) error {
 
 	// Obtain flag
 	versionFlag, _ := cmd.Flags().GetBool("version")
-	iconListFlag, _ := cmd.Flags().GetBool("list")
 
 	// Call function named ShowVersion
 	ShowVersion(versionFlag)
 
-	// Call function named ShowIconList
-	ShowIconList(iconListFlag, microsoftOfficeIcons, microsoftWindowsIcons, thirdPartyIcons)
-
 	return nil
-}
-
-// ValidateArgument function
-func ValidateArgument(argName string, argValue string, validValues []string) string {
-	for _, valid := range validValues {
-		// Convert all to lowercase to avoid problems with case sensitivity
-		if strings.EqualFold(strings.ToLower(argValue), strings.ToLower(valid)) {
-			valid = strings.ToLower(valid)
-			return valid
-		}
-	}
-
-	fmt.Printf("[!] Invalid value '%s' for argument '%s'. Valid values are: %v\n\n", argValue, argName, validValues)
-	os.Exit(1)
-	return ""
 }

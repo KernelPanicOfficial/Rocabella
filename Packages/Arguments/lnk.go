@@ -3,8 +3,6 @@ package Arguments
 import (
 	"Rocabella/Packages/Manager"
 	"Rocabella/Packages/Output"
-	"Rocabella/Packages/Templates"
-	"fmt"
 	"log"
 	"os"
 
@@ -37,7 +35,6 @@ var lnkArgument = &cobra.Command{
 
 		// Get the value of the any flag
 		target, _ := cmd.Flags().GetString("target")
-		icon, _ := cmd.Flags().GetString("icon")
 		output, _ := cmd.Flags().GetString("output")
 		description, _ := cmd.Flags().GetString("description")
 
@@ -54,21 +51,8 @@ var lnkArgument = &cobra.Command{
 		// Call function named OutputValidate
 		Output.OutputValidate(output, 1)
 
-		// Joining arrays into a single slice
-		allIcons := append(append(microsoftOfficeIcons, microsoftWindowsIcons...), thirdPartyIcons...)
-
-		// Call function named ValidateArgument
-		ValidateArgument("icons", icon, allIcons)
-
-		// Access the variable from the Templates package
-		iconTamplates := Templates.InitializeIconTemplates()
-
-		// Call function named GetIconPath
-		iconPath := GetIconPath(icon, iconTamplates)
-
-		fmt.Println(iconPath)
 		// Call function named CreateLNK
-		Manager.CreateLNK(target, icon, output, iconPath, description)
+		Manager.CreateLNK(target, output, description)
 
 		return nil
 	},

