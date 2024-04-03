@@ -1,6 +1,7 @@
 package Manager
 
 import (
+	"Rocabella/Packages/Utils"
 	"fmt"
 
 	"github.com/go-ole/go-ole"
@@ -9,7 +10,6 @@ import (
 
 // CreateLNK function
 func CreateLNK(target string, output string, description string) {
-
 	ole.CoInitializeEx(0, ole.COINIT_APARTMENTTHREADED|ole.COINIT_SPEED_OVER_MEMORY)
 	defer ole.CoUninitialize()
 
@@ -35,13 +35,17 @@ func CreateLNK(target string, output string, description string) {
 		return
 	}
 
-	test := "%WINDIR%\\System32\\coNhost.exe"
-
 	// Set properties of the shortcut
-	oleutil.PutProperty(shortcut.ToIDispatch(), "TargetPath", test)
-	oleutil.PutProperty(shortcut.ToIDispatch(), "WorkingDirectory", "")
+	oleutil.PutProperty(shortcut.ToIDispatch(), "TargetPath", target)
 	oleutil.PutProperty(shortcut.ToIDispatch(), "Description", description)
-	oleutil.PutProperty(shortcut.ToIDispatch(), "IconLocation", target)
+	oleutil.PutProperty(shortcut.ToIDispatch(), "IconLocation", target+",12")
 	oleutil.PutProperty(shortcut.ToIDispatch(), "WindowStyle", 7)
+
+	// Save the shortcut
 	oleutil.CallMethod(shortcut.ToIDispatch(), "Save")
+
+	// Call function named GetAbsolutePath
+	outputAbsolute := Utils.GetAbsolutePath(output)
+
+	fmt.Printf("[+] Shortcut successfully created: %s\n\n", outputAbsolute)
 }

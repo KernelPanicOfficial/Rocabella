@@ -74,8 +74,7 @@ func init() {
 	// For lnk command
 	lnkArgument.Flags().StringP("target", "t", "", "Set target host")
 	lnkArgument.Flags().StringP("output", "o", "", "Set output file")
-	lnkArgument.Flags().StringP("description", "d", "Malicious LNK", "Set lnk description")
-	lnkArgument.Flags().StringP("workingdir", "2", "", "Set lnk working directory")
+	lnkArgument.Flags().StringP("description", "d", "LNK Description", "Set lnk description")
 }
 
 // ShowAscii function

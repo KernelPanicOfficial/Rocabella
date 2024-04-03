@@ -21,10 +21,10 @@ var urlArgument = &cobra.Command{
 		// Check if additional arguments were provided.
 		if len(os.Args) <= 2 {
 			// Show help message.
-			error := cmd.Help()
-			if error != nil {
-				logger.Fatal("Error:", error)
-				return error
+			err := cmd.Help()
+			if err != nil {
+				logger.Fatal("Error:", err)
+				return err
 			}
 
 			// Exit the program.

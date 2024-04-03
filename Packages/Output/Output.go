@@ -31,5 +31,4 @@ func OutputValidate(output string, statement int) {
 	default:
 		logger.Fatal("Invalid statement.")
 	}
-
 }
