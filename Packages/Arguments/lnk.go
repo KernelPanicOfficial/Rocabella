@@ -1,6 +1,7 @@
 package Arguments
 
 import (
+	"Rocabella/Packages/Manager"
 	"os"
 
 	"github.com/spf13/cobra"
@@ -26,6 +27,15 @@ var lnkArgument = &cobra.Command{
 			// Exit the program.
 			os.Exit(0)
 		}
+
+		// Get the value of the any flag
+		target, _ := cmd.Flags().GetString("target")
+		icon, _ := cmd.Flags().GetString("icon")
+		output, _ := cmd.Flags().GetString("output")
+
+		// Call function named CreateLNK
+		Manager.CreateLNK(target, icon, output)
+
 		return nil
 	},
 }
