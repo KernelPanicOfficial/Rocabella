@@ -69,8 +69,8 @@ func init() {
 	// For url command
 	urlArgument.Flags().StringP("target", "t", "", "Set target host")
 	urlArgument.Flags().StringP("output", "o", "", "Set output file")
-	urlArgument.Flags().StringP("url-header", "u", "Url_Header", "Set Url header")
-	urlArgument.Flags().StringP("working-dir", "w", "Working_Directory", "Set working directory")
+	urlArgument.Flags().StringP("url-header", "u", "nickvourd", "Set Url header")
+	urlArgument.Flags().StringP("working-dir", "w", "nickvourd", "Set working directory")
 
 	// For lnk command
 	lnkArgument.Flags().StringP("target", "t", "", "Set target host")
