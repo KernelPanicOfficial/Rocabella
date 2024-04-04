@@ -59,13 +59,16 @@ func init() {
 	// Add flags to specific commands
 	// For sc command
 	scArgument.Flags().StringP("target", "t", "", "Set target host")
-	scArgument.Flags().StringP("icon", "i", "", "Set icon display")
 	scArgument.Flags().StringP("output", "o", "", "Set output file")
+	scArgument.Flags().StringP("description", "d", "Microsoft Outlook", "Set sc description")
+	scArgument.Flags().StringP("port", "p", "80", "Set remote port")
+	scArgument.Flags().StringP("share", "s", "nickvourd", "Set remote share")
 
 	// For lib command
 	libArgument.Flags().StringP("target", "t", "", "Set target host")
-	libArgument.Flags().StringP("icon", "i", "", "Set icon display")
 	libArgument.Flags().StringP("output", "o", "", "Set output file")
+	libArgument.Flags().StringP("port", "p", "80", "Set remote port")
+	libArgument.Flags().StringP("share", "s", "nickvourd", "Set remote share")
 
 	// For url command
 	urlArgument.Flags().StringP("target", "t", "", "Set target host")
