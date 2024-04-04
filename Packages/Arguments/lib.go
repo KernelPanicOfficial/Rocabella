@@ -18,6 +18,9 @@ var libArgument = &cobra.Command{
 	RunE: func(cmd *cobra.Command, args []string) error {
 		logger := log.New(os.Stderr, "[!] ", 0)
 
+		// Call function named ShowAscii
+		ShowAscii()
+
 		// Check if additional arguments were provided.
 		if len(os.Args) <= 2 {
 			// Show help message.
