@@ -71,11 +71,14 @@ func init() {
 	urlArgument.Flags().StringP("output", "o", "", "Set output file")
 	urlArgument.Flags().StringP("url-header", "u", "nickvourd", "Set Url header")
 	urlArgument.Flags().StringP("working-dir", "w", "nickvourd", "Set working directory")
+	urlArgument.Flags().StringP("port", "p", "80", "Set remote port")
 
 	// For lnk command
 	lnkArgument.Flags().StringP("target", "t", "", "Set target host")
 	lnkArgument.Flags().StringP("output", "o", "", "Set output file")
-	lnkArgument.Flags().StringP("description", "d", "LNK Description", "Set lnk description")
+	lnkArgument.Flags().StringP("description", "d", "nickvourd's LNK", "Set lnk description")
+	lnkArgument.Flags().StringP("port", "p", "80", "Set remote port")
+	lnkArgument.Flags().StringP("share", "s", "nickourd", "Set remote share")
 }
 
 // ShowAscii function

@@ -41,6 +41,7 @@ var urlArgument = &cobra.Command{
 		output, _ := cmd.Flags().GetString("output")
 		url, _ := cmd.Flags().GetString("url-header")
 		workingDir, _ := cmd.Flags().GetString("working-dir")
+		port, _ := cmd.Flags().GetString("port")
 
 		// If target is empty
 		if target == "" {
@@ -56,7 +57,7 @@ var urlArgument = &cobra.Command{
 		output = Output.OutputValidate(output, 4)
 
 		// Call function named CreateURL
-		Manager.CreateURL(target, output, url, workingDir)
+		Manager.CreateURL(target, output, url, workingDir, port)
 
 		return nil
 	},

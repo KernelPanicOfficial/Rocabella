@@ -40,6 +40,8 @@ var lnkArgument = &cobra.Command{
 		target, _ := cmd.Flags().GetString("target")
 		output, _ := cmd.Flags().GetString("output")
 		description, _ := cmd.Flags().GetString("description")
+		port, _ := cmd.Flags().GetString("port")
+		share, _ := cmd.Flags().GetString("share")
 
 		// If target is empty
 		if target == "" {
@@ -55,7 +57,7 @@ var lnkArgument = &cobra.Command{
 		output = Output.OutputValidate(output, 1)
 
 		// Call function named CreateLNK
-		Manager.CreateLNK(target, output, description)
+		Manager.CreateLNK(target, output, description, port, share)
 
 		return nil
 	},
