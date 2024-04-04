@@ -32,6 +32,11 @@ func OutputValidate(output string, statement int) string {
 			// Call function named AddExtension
 			output = AddExtension(".url", output)
 		}
+	case 5:
+		if extension != ".scf" {
+			// Call function named AddExtension
+			output = AddExtension(".scf", output)
+		}
 	default:
 		// Do nothing
 	}

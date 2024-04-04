@@ -54,6 +54,7 @@ func init() {
 	RocabellaCli.AddCommand(libArgument)
 	RocabellaCli.AddCommand(urlArgument)
 	RocabellaCli.AddCommand(lnkArgument)
+	RocabellaCli.AddCommand(scfArgument)
 
 	// Add flags to specific commands
 	// For sc command
@@ -79,6 +80,11 @@ func init() {
 	lnkArgument.Flags().StringP("description", "d", "nickvourd's LNK", "Set lnk description")
 	lnkArgument.Flags().StringP("port", "p", "80", "Set remote port")
 	lnkArgument.Flags().StringP("share", "s", "nickourd", "Set remote share")
+
+	// For scf command
+	scfArgument.Flags().StringP("target", "t", "", "Set target host")
+	scfArgument.Flags().StringP("output", "o", "", "Set output file")
+	scfArgument.Flags().StringP("port", "p", "80", "Set remote port")
 }
 
 // ShowAscii function

