@@ -14,6 +14,7 @@ func main() {
 	// Call function named CheckGoVersion
 	Utils.CheckGoVersion()
 
+	// RocabellaCli Execute
 	err := Arguments.RocabellaCli.Execute()
 	if err != nil {
 		logger.Fatal("Error", err)
