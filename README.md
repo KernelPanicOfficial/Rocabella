@@ -21,6 +21,7 @@ It supports a variety of sniffing file formats, including:
 - library-ms
 - LNK shortcuts
 - URL shortcuts
+- SCF Shortcuts
 
 Rocabella is written in Golang, a cross-platform language, enabling its use on both Windows and Linux systems.
 
