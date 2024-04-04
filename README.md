@@ -89,7 +89,6 @@ go build Rocabella
 888  T88b Y88..88P Y88b.    888  888 888 d88P Y8b.     888 888 888  888
 888   T88b "Y88P"   "Y8888P "Y888888 88888P"   "Y8888  888 888 "Y888888
 
-
 Rocabella v1.0 - Sniffing files generator.
 Rocabella is an open source tool licensed under MIT.
 Written with <3 by @nickvourd.
@@ -104,6 +103,7 @@ Available Commands:
   lib         library-ms file
   lnk         lnk shortcut file
   sc          searchConnector-ms file
+  scf         scf shortcut file
   url         url shortcut file
 
 Flags:
