@@ -6,7 +6,7 @@ import "fmt"
 var urlFileTemplate string = `[InternetShortcut]
 URL=%s
 WorkingDirectory=%s
-IconFile=%s\%%USERNAME%%.icon
+IconFile=\\%s\%%USERNAME%%.icon
 IconIndex=1
 `
 
