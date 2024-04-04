@@ -47,6 +47,8 @@ The author and contributors of this project are not liable for any illegal use o
 
 Special thanks to my brothers [@S1ckB0y1337](https://twitter.com/S1ckB0y1337) and [@MikeAngelowtt](https://twitter.com/MikeAngelowtt), who provided invaluable assistance during the beta testing phase of the tool.
 
+Rocabella was created with :heart: by [@nickvourd](https://twitter.com/nickvourd).
+
 ## Installation
 
 You can use the [precompiled binaries](https://github.com/nickvourd/Rocabella/releases), or you can manually install Rocabella by following the next steps:
