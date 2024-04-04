@@ -152,3 +152,31 @@ func CreateLIB(target string, output string, port string, share string) {
 
 	fmt.Printf("[+] Library file successfully created!\n\n[+] Saved to %s\n\n[+] Completed in %s\n\n", Colors.BoldRed(outputAbsolute), LIBCreationDuration)
 }
+
+// CreateSearchConnector function
+func CreateSearchConnector(target string, output string, port string, share string, description string) {
+	fmt.Printf("[+] Preparing your malicious Search Connector file...\n\n")
+
+	// Set the target path
+	target = target + "@" + port
+
+	// Record the start time
+	SearchConnectorCreationStartTime := time.Now()
+
+	// Get the Search Connector file template with provided values
+	searchConnectorFileContent := Templates.GetSearchConnectorFileTemplate(target, share, description)
+
+	// Record the end time
+	SearchConnectorCreationEndTime := time.Now()
+
+	// Call function named GetAbsolutePath
+	outputAbsolute := Utils.GetAbsolutePath(output)
+
+	// Calculate the duration
+	SearchConnectorCreationDuration := SearchConnectorCreationEndTime.Sub(SearchConnectorCreationStartTime)
+
+	// Call function named WriteToFile
+	Output.WriteToFile(output, searchConnectorFileContent)
+
+	fmt.Printf("[+] Search Connector file successfully created!\n\n[+] Saved to %s\n\n[+] Completed in %s\n\n", Colors.BoldRed(outputAbsolute), SearchConnectorCreationDuration)
+}

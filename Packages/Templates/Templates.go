@@ -38,6 +38,22 @@ Command=ToggleDesktop
   </searchConnectorDescriptionList>
 </libraryDescription>
 `
+
+	searchConnectorFileTemplate string = `<?xml version="1.0" encoding="UTF-8"?>
+<searchConnectorDescription xmlns="<http://schemas.microsoft.com/windows/2009/searchConnector>">
+    <iconReference>imageres.dll,-1002</iconReference>
+    <description>%s</description>
+    <isSearchOnlyItem>false</isSearchOnlyItem>
+    <includeInStartMenuScope>true</includeInStartMenuScope>
+    <iconReference>\\%s\%s</iconReference>
+    <templateInfo>
+        <folderType>{91475FE5-586B-4EBA-8D75-D17434B8CDF6}</folderType>
+    </templateInfo>
+    <simpleLocation>
+        <url>\\%s\%s</url>
+    </simpleLocation>
+</searchConnectorDescription>
+`
 )
 
 // GetURLFileTemplate returns the template with placeholders replaced by provided values
@@ -53,4 +69,9 @@ func GetSCFileTemplate(iconFile string) string {
 // GetLibraryFileTemplate returns the template with placeholders replaced by provided values
 func GetLibraryFileTemplate(share, target string) string {
 	return fmt.Sprintf(libraryFileTemplate, share, target)
+}
+
+// GetSearchConnectorFileTemplate returns the template with placeholders replaced by provided values
+func GetSearchConnectorFileTemplate(target, share, description string) string {
+	return fmt.Sprintf(searchConnectorFileTemplate, description, target, share, target, share)
 }

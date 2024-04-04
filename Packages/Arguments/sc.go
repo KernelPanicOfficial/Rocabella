@@ -1,8 +1,8 @@
 package Arguments
 
 import (
+	"Rocabella/Packages/Manager"
 	"Rocabella/Packages/Output"
-	"fmt"
 	"log"
 	"os"
 
@@ -39,7 +39,9 @@ var scArgument = &cobra.Command{
 		// Get the value of the any flag
 		target, _ := cmd.Flags().GetString("target")
 		output, _ := cmd.Flags().GetString("output")
-		icon, _ := cmd.Flags().GetString("icon")
+		port, _ := cmd.Flags().GetString("port")
+		share, _ := cmd.Flags().GetString("share")
+		description, _ := cmd.Flags().GetString("description")
 
 		// If target is empty
 		if target == "" {
@@ -54,7 +56,8 @@ var scArgument = &cobra.Command{
 		// Call function named OutputValidate
 		output = Output.OutputValidate(output, 2)
 
-		fmt.Println(icon, output)
+		// Call function named CreateSearchConnector
+		Manager.CreateSearchConnector(target, output, port, share, description)
 
 		return nil
 	},
