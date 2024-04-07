@@ -61,14 +61,14 @@ func WriteToFile(file string, data string) {
 	logger := log.New(os.Stderr, "[!] ", 0)
 	f, err := os.Create(file)
 	if err != nil {
-		logger.Fatal("Error:", err)
+		logger.Fatal("Error: ", err)
 		return
 	}
 	defer f.Close()
 
 	_, err = f.WriteString(data)
 	if err != nil {
-		logger.Fatal("Error:", err)
+		logger.Fatal("Error: ", err)
 		return
 	}
 }

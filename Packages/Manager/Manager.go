@@ -6,6 +6,8 @@ import (
 	"Rocabella/Packages/Templates"
 	"Rocabella/Packages/Utils"
 	"fmt"
+	"log"
+	"os"
 	"time"
 
 	"github.com/go-ole/go-ole"
@@ -14,6 +16,8 @@ import (
 
 // CreateLNK function
 func CreateLNK(target string, output string, description string, port string, share string) {
+	logger := log.New(os.Stderr, "[!] ", 0)
+
 	fmt.Printf("[+] Preparing your malicious LNK file...\n\n")
 
 	// Set the target path
@@ -28,14 +32,14 @@ func CreateLNK(target string, output string, description string, port string, sh
 	// Create an instance of the WScript Shell
 	unknown, error := oleutil.CreateObject("WScript.Shell")
 	if error != nil {
-		fmt.Println("Error creating WScript Shell object:", error)
+		logger.Fatal("Error: ", error)
 		return
 	}
 	defer unknown.Release()
 
 	shell, error := unknown.QueryInterface(ole.IID_IDispatch)
 	if error != nil {
-		fmt.Println("Error querying IDispatch interface:", error)
+		logger.Fatal("Error: ", error)
 		return
 	}
 	defer shell.Release()
@@ -43,7 +47,7 @@ func CreateLNK(target string, output string, description string, port string, sh
 	// Get the shortcut object
 	shortcut, error := oleutil.CallMethod(shell, "CreateShortcut", output)
 	if error != nil {
-		fmt.Println("Error creating shortcut object:", error)
+		logger.Fatal("Error: ", error)
 		return
 	}
 
