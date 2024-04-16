@@ -25,6 +25,8 @@ It supports a variety of sniffing file formats, including:
 
 Rocabella is written in Golang, a cross-platform language, enabling its use on both Windows and Linux systems.
 
+:warning: For Linux machine the module named `lnk`, it does not work!
+
 For command-line usage and examples, please refer to our [Wiki](https://github.com/nickvourd/Rocabella/wiki).
 
 > If you find any bugs, don’t hesitate to [report them](https://github.com/nickvourd/Rocabella/issues). Your feedback is valuable in improving the quality of this project!
