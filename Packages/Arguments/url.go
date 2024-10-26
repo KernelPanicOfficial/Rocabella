@@ -12,9 +12,10 @@ import (
 // urlArgument represents the 'url' command in the CLI.
 var urlArgument = &cobra.Command{
 	// Use defines how the command should be called.
-	Use:          "url",
+	Use:          "URL",
 	Short:        "url shortcut file",
 	SilenceUsage: true,
+	Aliases:      []string{"url"},
 
 	// RunE defines the function to run when the command is executed.
 	RunE: func(cmd *cobra.Command, args []string) error {
