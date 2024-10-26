@@ -12,9 +12,10 @@ import (
 // scfArgument represents the 'scf' command in the CLI.
 var scfArgument = &cobra.Command{
 	// Use defines how the command should be called.
-	Use:          "scf",
+	Use:          "SCF",
 	Short:        "scf shortcut file",
 	SilenceUsage: true,
+	Aliases:      []string{"scf"},
 
 	// RunE defines the function to run when the command is executed.
 	RunE: func(cmd *cobra.Command, args []string) error {
