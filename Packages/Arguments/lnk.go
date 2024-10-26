@@ -12,9 +12,10 @@ import (
 // lnkArgument represents the 'lnk' command in the CLI.
 var lnkArgument = &cobra.Command{
 	// Use defines how the command should be called.
-	Use:          "lnk",
+	Use:          "LNK",
 	Short:        "lnk shortcut file",
 	SilenceUsage: true,
+	Aliases:      []string{"lnk"},
 
 	// RunE defines the function to run when the command is executed.
 	RunE: func(cmd *cobra.Command, args []string) error {
