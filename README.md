@@ -23,7 +23,7 @@ It supports a variety of sniffing file formats, including:
 - URL shortcuts
 - SCF Shortcuts
 
-Rocabella is written in Golang, a cross-platform language, enabling its use on both Windows and Linux systems. This tool is the sibling of the [EvilLNK](https://github.com/nickvourd/EvilLNK) tool.
+Rocabella is written in Golang, a cross-platform language, enabling its use on both Windows and Linux systems.
 
 :warning: For Linux machines the module named `lnk`, it does not work!
 
