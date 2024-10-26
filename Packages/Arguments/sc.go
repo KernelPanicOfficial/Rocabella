@@ -12,9 +12,10 @@ import (
 // scArgument represents the 'sc' command in the CLI.
 var scArgument = &cobra.Command{
 	// Use defines how the command should be called.
-	Use:          "sc",
+	Use:          "SC",
 	Short:        "searchConnector-ms file",
 	SilenceUsage: true,
+	Aliases:      []string{"sc"},
 
 	// RunE defines the function to run when the command is executed.
 	RunE: func(cmd *cobra.Command, args []string) error {
