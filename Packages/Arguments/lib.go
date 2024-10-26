@@ -12,9 +12,10 @@ import (
 // libArgument represents the 'lib' command in the CLI.
 var libArgument = &cobra.Command{
 	// Use defines how the command should be called.
-	Use:          "lib",
+	Use:          "LIB",
 	Short:        "library-ms file",
 	SilenceUsage: true,
+	Aliases:      []string{"lib"},
 
 	// RunE defines the function to run when the command is executed.
 	RunE: func(cmd *cobra.Command, args []string) error {
