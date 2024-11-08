@@ -21,7 +21,7 @@ var (
 888  T88b Y88..88P Y88b.    888  888 888 d88P Y8b.     888 888 888  888 
 888   T88b "Y88P"   "Y8888P "Y888888 88888P"   "Y8888  888 888 "Y888888 																	                                                                                       
 `
-	__version__      = "1.0"
+	__version__      = "1.1"
 	__version_name__ = "Death Star"
 	__authors__      = "@nickvourd"
 	__license__      = "MIT"
