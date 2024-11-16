@@ -32,7 +32,7 @@ Command=ToggleDesktop
       <isDefaultSaveLocation>true</isDefaultSaveLocation>
       <isSupported>false</isSupported>
       <simpleLocation>
-        <url>\\%s\%s</url>
+        <url>\\\\%s\%s</url>
       </simpleLocation>
     </searchConnectorDescription>
   </searchConnectorDescriptionList>
@@ -45,12 +45,12 @@ Command=ToggleDesktop
     <description>%s</description>
     <isSearchOnlyItem>false</isSearchOnlyItem>
     <includeInStartMenuScope>true</includeInStartMenuScope>
-    <iconReference>\\%s\%s</iconReference>
+    <iconReference>\\\\%s\%s</iconReference>
     <templateInfo>
         <folderType>{91475FE5-586B-4EBA-8D75-D17434B8CDF6}</folderType>
     </templateInfo>
     <simpleLocation>
-        <url>\\%s\%s</url>
+        <url>\\\\%s\%s</url>
     </simpleLocation>
 </searchConnectorDescription>
 `
