@@ -40,7 +40,8 @@ Command=ToggleDesktop
 </libraryDescription>
 `
 
-	searchConnectorFileTemplate string = `<?xml version="1.0" encoding="UTF-8"?>
+	searchConnectorFileTemplate string = `
+ <?xml version="1.0" encoding="UTF-8"?>
 <searchConnectorDescription xmlns="<http://schemas.microsoft.com/windows/2009/searchConnector>">
     <iconReference>imageres.dll,-1002</iconReference>
     <description>%s</description>
