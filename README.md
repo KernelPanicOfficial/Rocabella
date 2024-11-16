@@ -5,7 +5,7 @@ Sniffing files generator.
 <p align="center">
   <img width="350" height="350" src="/Pictures/Rocabella-Logo.png"><br /><br />
   <img alt="Static Badge" src="https://img.shields.io/badge/License-MIT-green?link=https%3A%2F%2Fgithub.com%2Fnickvourd%2FRocabella%2Fblob%2Fmain%2FLICENSE">
-  <img alt="Static Badge" src="https://img.shields.io/badge/Version-1.1%20(Golden Star)-red?link=https%3A%2F%2Fgithub.com%2Fnickvourd%2FRocabella%2Freleases"><br /><br />
+  <img alt="Static Badge" src="https://img.shields.io/badge/Version-1.2%20(Red Star)-red?link=https%3A%2F%2Fgithub.com%2Fnickvourd%2FRocabella%2Freleases"><br /><br />
   <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/nickvourd/Rocabella?logoColor=yellow">
   <img alt="GitHub forks" src="https://img.shields.io/github/forks/nickvourd/Rocabella?logoColor=red">
   <img alt="GitHub watchers" src="https://img.shields.io/github/watchers/nickvourd/Rocabella?logoColor=blue">
@@ -93,7 +93,7 @@ go build Rocabella
 888  T88b Y88..88P Y88b.    888  888 888 d88P Y8b.     888 888 888  888
 888   T88b "Y88P"   "Y8888P "Y888888 88888P"   "Y8888  888 888 "Y888888
 
-Rocabella v1.1 - Sniffing files generator.
+Rocabella v1.2 - Sniffing files generator.
 Rocabella is an open source tool licensed under MIT.
 Written with <3 by @nickvourd.
 Please visit https://github/nickvourd/Rocabella for more...
