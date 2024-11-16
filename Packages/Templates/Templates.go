@@ -18,8 +18,7 @@ IconFile=\\%s\%%USERNAME%%.ico
 Command=ToggleDesktop
 `
 
-	libraryFileTemplate string = `
- <?xml version="1.0" encoding="UTF-8"?>
+	libraryFileTemplate string = `<?xml version="1.0" encoding="UTF-8"?>
 <libraryDescription xmlns="<http://schemas.microsoft.com/windows/2009/library>">
   <name>@windows.storage.dll,-34582</name>
   <version>6</version>
@@ -40,8 +39,7 @@ Command=ToggleDesktop
 </libraryDescription>
 `
 
-	searchConnectorFileTemplate string = `
- <?xml version="1.0" encoding="UTF-8"?>
+	searchConnectorFileTemplate string = `<?xml version="1.0" encoding="UTF-8"?>
 <searchConnectorDescription xmlns="<http://schemas.microsoft.com/windows/2009/searchConnector>">
     <iconReference>imageres.dll,-1002</iconReference>
     <description>%s</description>
