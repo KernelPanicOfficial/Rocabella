@@ -16,7 +16,7 @@ Sniffing files generator.
 Rocabella is an open-source tool that generates sniffing files.
 
 ![Static Badge](https://img.shields.io/badge/Go-lang-blue?style=flat&logoSize=auto)
-![Static Badge](https://img.shields.io/badge/Version-1.4%20(Gold Rose)-red?link=https%3A%2F%2Fgithub.com%2Fnickvourd%2FRocabella%2Freleases]
+![Static Badge](https://img.shields.io/badge/Version-1.4%20(Gold%20Rose)-red?link=https%3A%2F%2Fgithub.com%2Fnickvourd%2FRocabella%2Freleases]
 
 It supports a variety of sniffing file formats, including:
 
