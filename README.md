@@ -4,16 +4,19 @@ Sniffing files generator.
 
 <p align="center">
   <img width="350" height="350" src="/Pictures/Rocabella-Logo.png"><br /><br />
-  <img alt="Static Badge" src="https://img.shields.io/badge/License-MIT-green?link=https%3A%2F%2Fgithub.com%2Fnickvourd%2FRocabella%2Fblob%2Fmain%2FLICENSE">
-  <img alt="Static Badge" src="https://img.shields.io/badge/Version-1.4%20(Gold Rose)-red?link=https%3A%2F%2Fgithub.com%2Fnickvourd%2FRocabella%2Freleases"><br /><br />
-  <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/nickvourd/Rocabella?logoColor=yellow">
+  <img alt="GitHub License" src="https://img.shields.io/github/license/nickvourd/Rocabella?style=social&logo=GitHub&logoColor=purple">
+  <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/nickvourd/Rocabella?logoColor=yellow"><br />
   <img alt="GitHub forks" src="https://img.shields.io/github/forks/nickvourd/Rocabella?logoColor=red">
   <img alt="GitHub watchers" src="https://img.shields.io/github/watchers/nickvourd/Rocabella?logoColor=blue">
+  <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/nickvourd/Rocabella?style=social&logo=GitHub&logoColor=green">
 </p>
 
 ## Description
 
 Rocabella is an open-source tool that generates sniffing files.
+
+![Static Badge](https://img.shields.io/badge/Go-lang-blue?style=flat&logoSize=auto)
+![Static Badge](https://img.shields.io/badge/Version-1.4%20(Gold Rose)-red?link=https%3A%2F%2Fgithub.com%2Fnickvourd%2FRocabella%2Freleases]
 
 It supports a variety of sniffing file formats, including:
 
